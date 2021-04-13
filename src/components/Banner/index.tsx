@@ -18,7 +18,7 @@ const Banner: React.FC = () => {
           <h4 style={{ fontSize: '24px' }}>estão te esperando aqui</h4>
         </BannerInfo>
         <BannerSelector>
-          <Bullet />
+          <Bullet style={{ backgroundColor: 'var(--color-primary)' }} />
           <Bullet />
           <Bullet />
           <Bullet />
