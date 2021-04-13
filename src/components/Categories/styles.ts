@@ -23,6 +23,7 @@ export const Category = styled.div`
   align-items: flex-end;
 
   cursor: pointer;
+  border-radius: 4px;
 
   background: url(${(props: Props) => props.backgroundImage}) 50% 35%;
   background-size: cover;
