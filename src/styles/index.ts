@@ -79,3 +79,16 @@ export const Input = styled.input`
     color: var(--gray);
   }
 `;
+
+export const PrimaryButton = styled.button`
+  padding: 10px 30px;
+  
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  
+  cursor: pointer;
+`;
