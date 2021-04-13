@@ -1,13 +1,19 @@
-import { Container } from './styles'
+import { Container, Main } from './styles'
 
 import Header from '../Header'
+import Banner from '../Banner'
+import SalesForce from '../SalesForce'
+import Categories from '../Categories'
 
 function Layout() {
   return (
     <Container>
       <Header />
-      <div className='teste'>
-      </div>
+      <Banner />
+      <Main>
+        <SalesForce />
+        <Categories />
+      </Main>
     </Container>
   );
 }

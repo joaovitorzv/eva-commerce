@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  .teste {
-    border: 1px solid red;
-    width: 50%;
-    height: 150vh;
-  }
 `;
+
+export const Main = styled.main`
+  width: 85vw;
+  margin: 0 auto;
+
+  svg {
+    height: 40px;
+  }
+`

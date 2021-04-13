@@ -8,12 +8,13 @@ export const Container = styled.div`
 
   position: sticky;
   top: 0;
+  z-index: 5;
 
   background-color: #0C0D0D;
 `;
 
 export const HtmlHeader = styled.header`
-  width: 85%;
+  width: 85vw;
   height: 100%;
 
   margin: 0 auto;
@@ -22,7 +23,6 @@ export const HtmlHeader = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  border: 1px solid red;
 `
 
 export const Brand = styled.div`
