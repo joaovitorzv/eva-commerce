@@ -5,6 +5,7 @@ import Banner from '../Banner'
 import SalesForce from '../SalesForce'
 import Categories from '../Categories'
 import Newsletter from '../Newsletter'
+import Footer from '../Footer'
 
 function Layout() {
   return (
@@ -16,6 +17,7 @@ function Layout() {
         <Categories />
       </Main>
       <Newsletter />
+      <Footer />
     </Container>
   );
 }
