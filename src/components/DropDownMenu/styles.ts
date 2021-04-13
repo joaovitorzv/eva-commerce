@@ -16,11 +16,33 @@ export const Container = styled.a`
 
   svg {
     margin-left: 5px;
+    transform: rotate(180deg);
+    transition-duration: 300ms;
   }
+
+  .menu {
+    max-height: 0;
+    overflow: hidden;
+
+    -webkit-transition: max-height .3s ease-in;
+    transition: max-height .3s ease-in;
+  }
+
+  &:hover {
+    .menu {
+      max-height: 300px;
+    }
+
+    svg {
+      transform: rotate(360deg);
+      transition-duration: 300ms;
+    }
+  }
+
+
 `
 
 export const Menu = styled.ul`
-  display: ${(props: Props) => props.isShown ? 'block' : 'none'};
   position: absolute;
   transition-duration: 200ms;
 

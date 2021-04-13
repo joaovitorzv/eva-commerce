@@ -8,16 +8,11 @@ interface Props {
 }
 
 const DropDownMenu: React.FC<Props> = ({ children, menuOptions }) => {
-  const [isShown, setIsShown] = useState(false)
 
   return (
-    <Container
-      onMouseEnter={() => setIsShown(true)}
-      onMouseLeave={() => setIsShown(false)}
-    >
+    <Container>
       {children}
-
-      <Menu isShown={isShown}>
+      <Menu className='menu'>
         {menuOptions.map(menuOption => (
           <li key={menuOption}>{menuOption}</li>
         ))}
