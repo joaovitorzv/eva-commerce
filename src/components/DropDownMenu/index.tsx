@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import styled from 'styled-components'
-
 import { Container, Menu } from './styles';
 
 interface Props {

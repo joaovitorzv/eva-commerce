@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-type Props = {
-  isShown: boolean;
-}
-
 export const Container = styled.a`
   display: flex;
   align-items: center;

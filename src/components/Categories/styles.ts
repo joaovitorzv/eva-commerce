@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import BannerBackground from '../../assets/images/banner.jpeg'
-
 type Props = {
   backgroundImage: string;
 }
