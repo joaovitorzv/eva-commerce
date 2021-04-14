@@ -8,6 +8,8 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
 
+  margin-bottom: 1.5rem;
+
   .divider {
     width: 1px;
     background: var(--gray-light);
