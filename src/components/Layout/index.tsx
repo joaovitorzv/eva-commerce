@@ -16,7 +16,10 @@ function Layout() {
       <Main>
         <SalesForce />
         <Categories />
-        <Highlights title='Destaques' products={['teste']} />
+        <Highlights products={['teste']} />
+        <Highlights title='livros' products={['teste']} />
+        <Highlights title='escritório' products={['teste']} />
+        <Highlights title='vestuário' products={['teste']} />
       </Main>
       <Newsletter />
       <Footer />

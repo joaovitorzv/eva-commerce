@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Input, InputWrapper } from '../../styles'
+import { Input, InputWrapper, LinkOption } from '../../styles'
 
 export const Container = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 5;
 
-  background-color: #0C0D0D;
+  background-color: var(--color-primary-dark);
 `;
 
 export const HtmlHeader = styled.header`
@@ -22,15 +22,14 @@ export const HtmlHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-`
+`;
 
 export const Brand = styled.div`
   img {
     width: 80px;
     height: 32px;
   }
-`
+`;
 
 export const HeaderOptions = styled.div`
   display: flex;
@@ -39,22 +38,19 @@ export const HeaderOptions = styled.div`
     height: 18px;
     width: 18px;
   }
-`
 
-export const HeaderOption = styled.a`
-  display: flex;
-  align-items: center;
+  @media (max-width: 1250px) {
+    .userOptions {
+      display: none;
+    }
+  }
+`;
 
+export const HeaderOption = styled(LinkOption)`
   &:not(:first-child) {
     margin-left: 2.5rem;
   }
-  
-  cursor: pointer;
-
-  svg {
-    margin-left: 5px;
-  }
-`
+`;
 
 export const InputSearchWrapper = styled(InputWrapper)`
   margin-left: 2.5rem;
@@ -62,15 +58,22 @@ export const InputSearchWrapper = styled(InputWrapper)`
   a {
     padding: 0 5px;
     height: 100%;
-    border-bottom: 1px solid var(--gray-light);
+    border-bottom: 1px solid var(--white);
   }
 
   svg {
     height: 100%;
   }
 
+  @media (max-width: 820px) {
+    display: none;
+  }
 `;
 
 export const SearchInput = styled(Input)`
   width: 450px;
+
+  @media (max-width: 820px) {
+    display: none;
+  }
 `;

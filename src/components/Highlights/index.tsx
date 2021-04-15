@@ -18,7 +18,7 @@ import {
 import 'swiper/swiper-bundle.css';
 
 interface Props {
-  title: string;
+  title?: string;
   products: string[]
 }
 
@@ -37,7 +37,7 @@ const Highlights: React.FC<Props> = ({ title, products }) => {
     <Container>
       <HighlightTitle>
         <div className='contrast-bar'></div>
-        <h3>{title}</h3>
+        <h3>Destaques {title && 'em ' + title}</h3>
       </HighlightTitle>
 
       <Products>

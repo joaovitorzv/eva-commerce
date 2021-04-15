@@ -51,6 +51,10 @@ export const Bullet = styled.span`
   border-radius: 25px;
   cursor: pointer;
 
+  -webkit-box-shadow: -23px 28px 35px -8px rgba(0,0,0,0.68);
+  -moz-box-shadow: -23px 28px 35px -8px rgba(0,0,0,0.68);
+  box-shadow: -23px 28px 35px -8px rgba(0,0,0,0.68);
+
   &:not(:first-child) {
     margin-left: 8px;
   }

@@ -1,6 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 
 import DropDownMenu from '../DropDownMenu'
+import Hamburger from '../Hamburger'
 
 import {
   Container,
@@ -49,15 +50,17 @@ const Header: React.FC = () => {
             </a>
           </InputSearchWrapper>
 
-          <HeaderOption>
+          <HeaderOption className='userOptions'>
             <h2>Minha conta </h2>
             <UserIcon />
           </HeaderOption>
 
-          <HeaderOption>
+          <HeaderOption className='userOptions'>
             <h2>Carrinho (2) </h2>
             <CartIcon />
           </HeaderOption>
+
+          <Hamburger />
         </HeaderOptions>
       </HtmlHeader>
     </Container>

@@ -3,8 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.a`
   display: flex;
   align-items: center;
-  
+
   cursor: pointer;
+
+  @media (max-width: 890px) {
+    display: none;
+  }
 
   &:not(:first-child) {
     margin-left: 2.5rem;
@@ -34,8 +38,6 @@ export const Container = styled.a`
       transition-duration: 300ms;
     }
   }
-
-
 `
 
 export const Menu = styled.ul`

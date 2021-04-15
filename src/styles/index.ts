@@ -10,6 +10,8 @@ export default createGlobalStyle`
     --gray-light: #DADFEB;
 
     --warning: #EFD444;
+
+    --white: #FDFDFD;
     --white-1: #F7FAFF;
   }
 
@@ -80,6 +82,17 @@ export const Input = styled.input`
   }
   :-moz-placeholder { /* Firefox 18- */
     color: var(--gray);
+  }
+`;
+
+export const LinkOption = styled.a`
+  display: flex;
+  align-items: center;
+  
+  cursor: pointer;
+
+  svg {
+    margin-left: 5px;
   }
 `;
 
