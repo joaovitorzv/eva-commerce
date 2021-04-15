@@ -12,7 +12,7 @@ export const Container = styled.article`
 
   .divider {
     width: 1px;
-    background: var(--gray-light);
+    background: var(--white-2);
     height: 75px;
   }
 
@@ -21,7 +21,7 @@ export const Container = styled.article`
     height: auto;
 
     .divider {
-      width: 75px;
+      width: 120px;
       height: 1px;
     }
   }
@@ -36,7 +36,7 @@ export const InfoItem = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: var(--color-primary);
+  color: var(--primary);
 
   h4 {
     font-size: 16px;

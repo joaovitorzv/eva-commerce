@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
-  background-color: var(--color-primary-dark);
+  background-color: var(--black);
   padding: 2.5rem 4rem;
 `;
 
@@ -9,10 +9,10 @@ export const FooterHeader = styled.header`
   display: flex;
 
   h3 {
-    color: var(--color-primary);
+    color: var(--primary);
 
     padding-bottom: 8px;
-    border-bottom: 3px solid var(--gray-light);
+    border-bottom: 3px solid var(--white-2);
   }
 `;
 
@@ -28,7 +28,7 @@ export const AboutList = styled.div`
 
   svg {
     height: 18px;
-    color: var(--color-primary);
+    color: var(--primary);
   }
 
   ul {

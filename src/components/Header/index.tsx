@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import DropDownMenu from '../DropDownMenu'
 import Hamburger from '../Hamburger'
 
@@ -45,9 +43,7 @@ const Header: React.FC = () => {
 
           <InputSearchWrapper>
             <SearchInput />
-            <a href="/">
-              <SearchIcon />
-            </a>
+            <SearchIcon />
           </InputSearchWrapper>
 
           <HeaderOption className='userOptions'>

@@ -1,4 +1,3 @@
-import React from 'react';
 
 import {
   Container,
@@ -18,7 +17,7 @@ const Banner: React.FC = () => {
           <h4 style={{ fontSize: '24px' }}>estão te esperando aqui</h4>
         </BannerInfo>
         <BannerSelector>
-          <Bullet style={{ backgroundColor: 'var(--color-primary)' }} />
+          <Bullet style={{ backgroundColor: 'var(--primary-light)' }} />
           <Bullet />
           <Bullet />
           <Bullet />

@@ -8,6 +8,12 @@ type Props = {
 
 export const Container = styled.div`
   display: none;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+  }
   
   @media (max-width: 1250px) {
     display: block;
@@ -24,7 +30,7 @@ export const MenuWrapper = styled.div`
   left: 0;
   width: 100%;
   
-  background-color: var(--color-primary-dark);
+  background-color: var(--black);
 `;
 
 export const HamburgerMenu = styled.button`
@@ -35,14 +41,10 @@ export const HamburgerMenu = styled.button`
   background-color: transparent;
   cursor: pointer;
 
-  svg {
-    height: 40px;
-    width: 40px;
-    color: var(--white);
-  }
-
   @media (max-width: 1250px) {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -82,6 +84,6 @@ export const MenuOption = styled(LinkOption)`
   }
 
   &:not(:first-child) {
-    border-top: 1px solid var(--gray);
+    border-top: 1px solid var(--black-3);
   }
 `;

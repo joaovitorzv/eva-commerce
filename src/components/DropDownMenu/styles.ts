@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.a`
+export const Container = styled.div`
   display: flex;
   align-items: center;
 
@@ -53,10 +53,10 @@ export const Menu = styled.ul`
   li {
     padding: 10px;
     width: 150px;
-    color: var(--color-primary-dark);
+    color: var(--black);
 
     &:not(:first-child) {
-      border-top: 1px solid var(--gray-light);
+      border-top: 1px solid var(--white-2);
     }
   }
 `;

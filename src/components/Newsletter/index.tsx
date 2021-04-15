@@ -1,18 +1,34 @@
-import React from 'react';
+import { Formik, FormikHelpers } from 'formik';
+import * as Yup from 'yup';
+import cn from 'classnames';
 
-import { ReactComponent as EmailIcon } from '../../assets/svg/newsletter.svg'
-
-import { Input, PrimaryButton } from '../../styles'
+import { ReactComponent as EmailIcon } from '../../assets/svg/newsletter.svg';
+import { Input, PrimaryButton, ErrorText } from '../../styles';
 
 import {
   Container,
   NewsletterInfo,
   Form,
-  InputContainer,
+  InputsContainer,
   NewsletterInputWrapper
 } from './styles';
 
+interface NewsletterValues {
+  name: string;
+  email: string;
+}
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string().min(3, 'Nome precisa de 3 caracteres').required('Nome obrigatório'),
+  email: Yup.string().email('Digite um email valido').required('Email obrigatório')
+})
+
 const Newsletter: React.FC = () => {
+
+  const handleSubmit = (values: NewsletterValues, { setSubmitting }: FormikHelpers<NewsletterValues>) => {
+
+  }
+
   return (
     <Container>
       <NewsletterInfo>
@@ -20,21 +36,54 @@ const Newsletter: React.FC = () => {
         <h4>Receba nossas novidades, descontos e muito mais</h4>
       </NewsletterInfo>
 
-      <Form>
-        <InputContainer>
-          <NewsletterInputWrapper>
-            <Input placeholder='Digite seu nome' />
-          </NewsletterInputWrapper>
+      <Formik
+        validationSchema={validationSchema}
+        initialValues={{
+          name: '',
+          email: ''
+        }}
+        onSubmit={handleSubmit}
+      >
+        {({ handleSubmit, handleChange, handleBlur, values, touched, isSubmitting, errors }) => (
+          <Form onSubmit={handleSubmit}>
+            <InputsContainer>
+              <div className='input-container'>
+                {errors.name && touched.name && <ErrorText>{errors.name}</ErrorText>}
+                <NewsletterInputWrapper
+                  className={cn({ 'error': !!errors.name && touched.name })}
+                >
+                  <Input
+                    placeholder='Digite seu nome'
+                    name="name"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.name}
+                  />
+                </NewsletterInputWrapper>
+              </div>
 
-          <NewsletterInputWrapper>
-            <Input placeholder='Digite seu email' />
-          </NewsletterInputWrapper>
-        </InputContainer>
+              <div className='input-container'>
+                {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
+                <NewsletterInputWrapper
+                  className={cn({ 'error': !!errors.email && touched.email })}
+                >
+                  <Input
+                    placeholder='Digite seu email'
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                  />
+                </NewsletterInputWrapper>
+              </div>
+            </InputsContainer>
 
-        <PrimaryButton>
-          Eu quero receber novidades!
-        </PrimaryButton>
-      </Form>
+            <PrimaryButton type='submit'>
+              Eu quero receber novidades!
+          </PrimaryButton>
+          </Form>
+        )}
+      </Formik>
     </Container>
   );
 }

@@ -20,6 +20,7 @@ const Hamburger: React.FC = () => {
   return (
     <Container>
       <HamburgerMenu
+        className='icon'
         onClick={() => setOpenHamburger(!openHamburger)}
       >
         <HamburgerIcon />
@@ -28,9 +29,7 @@ const Hamburger: React.FC = () => {
       <MenuWrapper openHamburger={openHamburger}>
         <MenuInputWrapper>
           <MenuInput />
-          <a href="/">
-            <SearchIcon />
-          </a>
+          <SearchIcon />
         </MenuInputWrapper>
 
         <MenuOption>

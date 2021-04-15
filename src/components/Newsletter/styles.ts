@@ -4,9 +4,9 @@ import { InputWrapper } from '../../styles'
 
 export const Container = styled.section`
   width: 100%;
-  padding: 0 5rem;
-  background-color: var(--gray);
+  background-color: var(--black-3);
 
+  margin-top: 80px;
   padding: 3rem;
 `;
 
@@ -19,7 +19,6 @@ export const NewsletterInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 
   svg {
     fill: white;
@@ -37,7 +36,7 @@ export const NewsletterInfo = styled.div`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   width: 50%;
   margin: 0 auto;
 
@@ -48,25 +47,48 @@ export const Form = styled.div`
   }
 `;
 
-export const InputContainer = styled.div`
+export const InputsContainer = styled.div`
   display: flex;
   justify-content: space-between;  
 
   margin-bottom: 3rem;
 
+  .input-container {
+    width: 49%;
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    .error {
+      border: 1px solid var(--primary);
+    }
+
+    p {
+      padding-left: 10px;
+    }
+  }
+
+
   @media (max-width: 1250px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 1250px) {
+    .input-container {
+      width: 100%;
+
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
   }
 `;
 
 export const NewsletterInputWrapper = styled(InputWrapper)`
-  width: 49%;
+  width: 100%;
 
-  @media (max-width: 1250px) {
-    width: 100%;
 
-    &:not(:first-child) {
-      margin-top: 1rem;
-    }
-  }
 `;

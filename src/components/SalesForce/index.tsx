@@ -1,4 +1,3 @@
-import React from 'react';
 
 import { ReactComponent as LockerIcon } from '../../assets/svg/cadeado.svg'
 import { ReactComponent as CardIcon } from '../../assets/svg/cartao.svg'

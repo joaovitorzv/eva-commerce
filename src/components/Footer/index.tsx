@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ReactComponent as ShopIcon } from '../../assets/svg/loja.svg'
 import { ReactComponent as MapIcon } from '../../assets/svg/mapa.svg'
 

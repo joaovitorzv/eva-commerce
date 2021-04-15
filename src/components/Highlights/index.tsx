@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NavigationOptions } from 'swiper/types/components/navigation';
-import { PaginationOptions } from 'swiper/types/components/pagination';
 
 import Product from '../Product';
 

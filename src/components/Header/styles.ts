@@ -10,7 +10,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 5;
 
-  background-color: var(--color-primary-dark);
+  background-color: var(--black);
 `;
 
 export const HtmlHeader = styled.header`
@@ -34,11 +34,6 @@ export const Brand = styled.div`
 export const HeaderOptions = styled.div`
   display: flex;
 
-  svg {
-    height: 18px;
-    width: 18px;
-  }
-
   @media (max-width: 1250px) {
     .userOptions {
       display: none;
@@ -47,6 +42,11 @@ export const HeaderOptions = styled.div`
 `;
 
 export const HeaderOption = styled(LinkOption)`
+  svg {
+    height: 18px;
+    width: 18px;
+  }
+
   &:not(:first-child) {
     margin-left: 2.5rem;
   }
@@ -63,6 +63,7 @@ export const InputSearchWrapper = styled(InputWrapper)`
 
   svg {
     height: 100%;
+    width: 18px;
   }
 
   @media (max-width: 820px) {

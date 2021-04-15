@@ -52,7 +52,7 @@ export const Bullet = styled.span`
   width: 10px;
   height: 10px;
 
-  background-color: var(--color-primary-light);
+  background-color: var(--white);
   border-radius: 25px;
   cursor: pointer;
 

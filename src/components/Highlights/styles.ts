@@ -7,12 +7,12 @@ export const Container = styled.section`
 export const HighlightTitle = styled.div`
   padding-bottom: 2.5rem;
 
-  color: var(--color-primary-dark);
+  color: var(--black);
 
   .contrast-bar {
     width: 64px;
     height: 4px;
-    background-color: var(--color-primary);
+    background-color: var(--primary);
   }
 `;
 
@@ -36,7 +36,7 @@ export const Products = styled.div`
     padding: 20px 10px;
     
     svg {
-      color: var(--color-primary);
+      color: var(--primary);
       height: 32px;
     }
   }

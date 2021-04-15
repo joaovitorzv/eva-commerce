@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   &:hover {
     transition-duration: .5s;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--primary-dark);
 
     .buyBtn {
       display: block;
@@ -79,7 +79,7 @@ export const PriceContainer = styled.div`
   margin-bottom: 10px;
 
   h3 {
-    color: var(--color-primary);
+    color: var(--primary);
     font-size: 32px;
   }
 
@@ -91,13 +91,13 @@ export const PriceContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
     padding: 2px 0;
   }
 
   .olderPrice {
     font-size: 12px;
     text-decoration: line-through;
+    color: var(--black-2);
   }
 `;
 
