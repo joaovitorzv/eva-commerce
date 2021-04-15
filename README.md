@@ -10,7 +10,7 @@
   <p align="center">
     An awesome project made with React!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>View project live »</strong></a>
+    <a href="https://eva-commerce-joaovitor.netlify.app/"><strong>View project live »</strong></a>
   </p>
 </p>
 
