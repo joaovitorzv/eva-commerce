@@ -17,7 +17,7 @@ const Newsletter: React.FC = () => {
     <Container>
       <NewsletterInfo>
         <EmailIcon />
-        <h4>Recebe nossas novidades, descontos e muito mais</h4>
+        <h4>Receba nossas novidades, descontos e muito mais</h4>
       </NewsletterInfo>
 
       <Form>

@@ -71,6 +71,8 @@ export const Input = styled.input`
   border: none;
   border-bottom: 1px solid var(--gray-light);
 
+  width: 100%;
+
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: var(--gray);
   }

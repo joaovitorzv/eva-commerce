@@ -42,11 +42,21 @@ export const Products = styled.div`
   }
 
   .back {
-    left: 40px;
+    left: 5px;
   }
 
   .next {
-    right: 40px;
+    right: 5px;
+  }
+
+  @media (min-width: 860px) {
+    .back {
+      left: 30px;
+    }
+
+    .next {
+      right: 30px;
+    }
   }
 `;
 

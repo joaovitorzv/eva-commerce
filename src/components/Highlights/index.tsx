@@ -49,7 +49,12 @@ const Highlights: React.FC<Props> = ({ title, products }) => {
           <NextIcon />
         </button>
         <Swiper
-          slidesPerView={4}
+          slidesPerView={1}
+          breakpoints={{
+            1200: { slidesPerView: 4, },
+            880: { slidesPerView: 3 },
+            680: { slidesPerView: 2 }
+          }}
           onBeforeInit={onBeforeInit}
           className='swiper-container'
         >

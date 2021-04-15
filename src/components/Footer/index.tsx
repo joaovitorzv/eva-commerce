@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ReactComponent as ShopIcon } from '../../assets/svg/loja.svg'
-import { ReactComponent as MapIcon } from '../../assets/svg/loja.svg'
+import { ReactComponent as MapIcon } from '../../assets/svg/mapa.svg'
 
 import { ReactComponent as WhatsappIcon } from '../../assets/svg/whatsapp.svg'
 import { ReactComponent as EmailIcon } from '../../assets/svg/email.svg'
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <li><a href="/">Quem somos</a></li>
             <li><a href="/">Políticas de privacidade</a></li>
             <li><a href="/">Feedback de clientes</a></li>
-            <li><a href="/">Troca e devoluções</a></li>
+            <li><a href="/">Trocas e devoluções</a></li>
           </ul>
         </AboutList>
 

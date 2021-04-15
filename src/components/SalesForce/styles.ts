@@ -15,6 +15,16 @@ export const Container = styled.article`
     background: var(--gray-light);
     height: 75px;
   }
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    height: auto;
+
+    .divider {
+      width: 75px;
+      height: 1px;
+    }
+  }
 `;
 
 export const InfoItem = styled.div`
@@ -34,5 +44,13 @@ export const InfoItem = styled.div`
 
   svg {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: 820px) {
+    padding: 3rem 0;
+  
+    svg {
+      height: 60px;
+    }
   }
 `;

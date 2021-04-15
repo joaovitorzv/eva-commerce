@@ -5,7 +5,7 @@ export const Container = styled.footer`
   padding: 2.5rem 4rem;
 `;
 
-export const FooterHeader = styled.div`
+export const FooterHeader = styled.header`
   display: flex;
 
   h3 {
@@ -18,6 +18,8 @@ export const FooterHeader = styled.div`
 
 export const FooterBody = styled.div`
   display: flex;
+
+  flex-wrap: wrap;
 
 `;
 

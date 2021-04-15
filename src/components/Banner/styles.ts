@@ -38,6 +38,11 @@ export const BannerInfo = styled.div`
   h4 {
     font-size: 42px;
   }
+
+  @media (max-width: 820px) {
+    width: 90%;
+    padding-top: 20%;
+  }
 `
 export const BannerSelector = styled.div`
   display: flex;
