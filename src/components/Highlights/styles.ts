@@ -9,8 +9,6 @@ export const HighlightTitle = styled.div`
 
   color: var(--color-primary-dark);
 
-  border: 1px solid red;
-
   .contrast-bar {
     width: 64px;
     height: 4px;
@@ -19,33 +17,35 @@ export const HighlightTitle = styled.div`
 `;
 
 export const Products = styled.div`
-  border: 1px solid red;
-
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 450px;  
+  height: 460px;
 
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-  button {
+  .control {
     background-color: transparent;
     border: none;
     cursor: pointer;
-
     position: absolute;
-
     padding: 20px 10px;
-
+    
     svg {
       color: var(--color-primary);
       height: 32px;
     }
   }
 
-  .control-back {
+  .back {
     left: 40px;
   }
 
-  .control-next {
+  .next {
     right: 40px;
   }
 `;
