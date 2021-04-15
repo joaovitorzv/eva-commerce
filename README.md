@@ -10,7 +10,7 @@
   <p align="center">
     An awesome project made with React!
     <br />
-    <a href="https://eva-commerce-joaovitor.netlify.app/" target='blank'><strong>View project live »</strong></a>
+    <a href="https://eva-commerce-joaovitor.netlify.app/" target='_blank'><strong>View project live »</strong></a>
   </p>
 </p>
 
