@@ -19,7 +19,6 @@ interface ICategory {
 }
 
 const Categories: React.FC = () => {
-
   const [categoriesWithStock, setCategoriesWithStock] = useState<ICategory[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
