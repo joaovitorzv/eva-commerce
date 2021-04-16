@@ -16,7 +16,7 @@
 * [React](https://reactjs.org/)
 * [Typescript](https://www.typescriptlang.org/)
 * [StyledComponents](https://styled-components.com/)
-* [Swiperjs](swiperjs.com/)
+* [Swiperjs](https://swiperjs.com/)
 
 
 
