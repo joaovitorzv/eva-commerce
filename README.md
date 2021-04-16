@@ -9,8 +9,6 @@
 
   <p align="center">
     An awesome project made with React!
-    <br />
-    <a href="https://eva-commerce-joaovitor.netlify.app/" target="_blank"><strong>View project live »</strong></a>
   </p>
 </p>
 
@@ -23,8 +21,6 @@
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-You can see a live production [HERE](https://eva-commerce-joaovitor.netlify.app/).
 To get a local copy up and running follow these simple steps below.
 
 ### How to setup locally
