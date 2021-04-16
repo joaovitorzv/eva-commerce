@@ -33,7 +33,7 @@ export const Products = styled.div`
     border: none;
     cursor: pointer;
     position: absolute;
-    padding: 20px 10px;
+    padding: 20px 10px 20px 0;
     
     svg {
       color: var(--primary);

@@ -10,47 +10,58 @@ import OfficeBackground from '../../assets/images/category-2.jpeg'
 import ClothesBackground from '../../assets/images/category-3.jpeg'
 
 import Spinner from '../Spinner';
+import { IProduct } from '../Product'
+
+interface ICategory {
+  id: string;
+  name: string;
+  product: IProduct[];
+}
 
 const Categories: React.FC = () => {
-  const [categoriesData, setCategoriesData] = useState<string[]>([])
+
+  const [categoriesWithStock, setCategoriesWithStock] = useState<ICategory[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
-    fetch('https:eva-test.herokuapp.com/categories')
-      .then(response => response.json())
-      .then(
-        (result) => {
-          setCategoriesData(result)
-        },
-        (error) => {
-          setFetchError(true)
-        }
-      )
+    async function fetchCategories() {
+      const response = await fetch('https:eva-test.herokuapp.com/categories')
+      const categoriesData: ICategory[] = await response.json();
+
+      const filteredCategories = categoriesData.filter(category => {
+        console.log(category.name, category.product.length)
+        return category.product.length >= 4
+      })
+      setCategoriesWithStock(filteredCategories)
+      setIsLoading(false)
+    }
+    fetchCategories()
   }, [])
 
+  // API doesn't provides categories background
+  // so the position of the elements below can interfere on the result 
+  const categoriesBackground = [
+    { path: BooksBackground },
+    { path: OfficeBackground },
+    { path: ClothesBackground }
+  ]
+
   return (
-    !fetchError ? (
-      <Container>
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <>
-            <Category backgroundImage={BooksBackground}>
-              <h3>Livros</h3>
+    <Container>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          {categoriesWithStock.map((category, idx) => (
+            <Category
+              backgroundImage={categoriesBackground[idx].path}
+            >
+              <h3>{category.name}</h3>
             </Category>
-
-            <Category backgroundImage={OfficeBackground}>
-              <h3>Escritório</h3>
-            </Category>
-
-            <Category backgroundImage={ClothesBackground}>
-              <h3>Vestuário</h3>
-            </Category>
-          </>
-        )}
-      </Container>
-    ) : null
+          ))}
+        </>
+      )}
+    </Container>
   );
 }
 

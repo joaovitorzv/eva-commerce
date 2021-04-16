@@ -13,6 +13,14 @@ import {
 import { ReactComponent as StarIcon } from '../../assets/svg/estrela.svg';
 import BooksBackground from '../../assets/images/category-1.jpeg'
 
+export interface IProduct {
+  id: string;
+  name: string;
+  stars: number;
+  price: string;
+  promotional_price: string;
+  category_id: string;
+}
 
 const Product: React.FC = () => {
   return (
