@@ -3,7 +3,8 @@ import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NavigationOptions } from 'swiper/types/components/navigation';
 
-import Product from '../Product';
+import Product, { IProduct } from '../Product';
+import Spinner from '../Spinner'
 
 import { ReactComponent as BackIcon } from '../../assets/svg/back.svg';
 import { ReactComponent as NextIcon } from '../../assets/svg/next.svg';
@@ -18,12 +19,13 @@ import 'swiper/swiper-bundle.css';
 
 interface Props {
   title?: string;
-  products: string[]
+  products: IProduct[];
+  isLoading: boolean;
 }
 
 SwiperCore.use([Navigation])
 
-const Highlights: React.FC<Props> = ({ title, products }) => {
+const Highlights: React.FC<Props> = ({ title, products, isLoading }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -47,44 +49,26 @@ const Highlights: React.FC<Props> = ({ title, products }) => {
         <button className='control next' ref={nextRef}>
           <NextIcon />
         </button>
-        <Swiper
-          slidesPerView={1}
-          breakpoints={{
-            1200: { slidesPerView: 4, },
-            880: { slidesPerView: 3 },
-            680: { slidesPerView: 2 }
-          }}
-          onBeforeInit={onBeforeInit}
-          className='swiper-container'
-        >
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Product />
-          </SwiperSlide>
-        </Swiper>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <Swiper
+            slidesPerView={1}
+            breakpoints={{
+              1200: { slidesPerView: 4, },
+              880: { slidesPerView: 3 },
+              680: { slidesPerView: 2 }
+            }}
+            onBeforeInit={onBeforeInit}
+            className='swiper-container'
+          >
+            {products.map(product => (
+              <SwiperSlide key={product.id}>
+                <Product productData={product} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </Products>
     </Container>
   );

@@ -44,6 +44,7 @@ export const InfoItem = styled.div`
 
   svg {
     margin-bottom: 5px;
+    height: 40px;
   }
 
   @media (max-width: 820px) {

@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.footer`
   background-color: var(--black);
   padding: 2.5rem 4rem;
+
+  @media (max-width: 820px) {
+    padding: 2.5rem 2rem;
+  }
 `;
 
 export const FooterHeader = styled.header`
@@ -58,6 +62,13 @@ export const AboutList = styled.div`
       .white {
         color: white;
       }
+    }
+  }
+
+  @media (max-width: 530px) {
+    ul {
+      padding-right: 0;
+      border: 1px solid red;
     }
   }
 `;

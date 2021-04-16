@@ -8,6 +8,10 @@ export const Container = styled.section`
 
   margin-top: 80px;
   padding: 3rem;
+
+  @media (max-width: 820px) {
+    padding: 3rem 2rem;
+  }
 `;
 
 export const NewsletterInfo = styled.div`
@@ -19,6 +23,7 @@ export const NewsletterInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   svg {
     fill: white;
@@ -33,6 +38,11 @@ export const NewsletterInfo = styled.div`
 
   @media (max-width: 820px) {
     width: 100%;
+    padding: 2rem 0;
+
+    h4 {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -89,6 +99,18 @@ export const InputsContainer = styled.div`
 
 export const NewsletterInputWrapper = styled(InputWrapper)`
   width: 100%;
+`;
 
+export const NewsletterSuccess = styled.div`
+  text-align: center;
+  font-size: 24px;
+  color: var(--success);
 
+  strong {
+    color: var(--white-2);
+  }
+
+  @media (max-width: 820px) {
+    font-size: 18px;
+  }
 `;

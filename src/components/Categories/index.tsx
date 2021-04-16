@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import {
   Container,
   Category
@@ -12,30 +10,18 @@ import ClothesBackground from '../../assets/images/category-3.jpeg'
 import Spinner from '../Spinner';
 import { IProduct } from '../Product'
 
-interface ICategory {
+export interface ICategory {
   id: string;
   name: string;
   product: IProduct[];
 }
 
-const Categories: React.FC = () => {
-  const [categoriesWithStock, setCategoriesWithStock] = useState<ICategory[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+interface Props {
+  categories: ICategory[];
+  isLoading: boolean;
+}
 
-  useEffect(() => {
-    async function fetchCategories() {
-      const response = await fetch('https:eva-test.herokuapp.com/categories')
-      const categoriesData: ICategory[] = await response.json();
-
-      const filteredCategories = categoriesData.filter(category => {
-        console.log(category.name, category.product.length)
-        return category.product.length >= 4
-      })
-      setCategoriesWithStock(filteredCategories)
-      setIsLoading(false)
-    }
-    fetchCategories()
-  }, [])
+const Categories: React.FC<Props> = ({ categories, isLoading }) => {
 
   // API doesn't provides categories background
   // so the position of the elements below can interfere on the result 
@@ -51,8 +37,9 @@ const Categories: React.FC = () => {
         <Spinner />
       ) : (
         <>
-          {categoriesWithStock.map((category, idx) => (
+          {categories.map((category, idx) => (
             <Category
+              key={category.id}
               backgroundImage={categoriesBackground[idx].path}
             >
               <h3>{category.name}</h3>

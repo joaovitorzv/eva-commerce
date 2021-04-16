@@ -6,7 +6,6 @@ export const Container = styled.section`
 
 export const HighlightTitle = styled.div`
   padding-bottom: 2.5rem;
-
   color: var(--black);
 
   .contrast-bar {
@@ -21,6 +20,10 @@ export const Products = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 460px;
+
+  .swiper-container {
+    width: 100%;
+  }
 
   .swiper-slide {
     display: flex;

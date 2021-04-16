@@ -1,4 +1,5 @@
-import { Formik, FormikHelpers } from 'formik';
+import { useState } from 'react';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import cn from 'classnames';
 
@@ -10,10 +11,11 @@ import {
   NewsletterInfo,
   Form,
   InputsContainer,
-  NewsletterInputWrapper
+  NewsletterInputWrapper,
+  NewsletterSuccess
 } from './styles';
 
-interface NewsletterValues {
+interface INewsletterValues {
   name: string;
   email: string;
 }
@@ -24,10 +26,7 @@ const validationSchema = Yup.object().shape({
 })
 
 const Newsletter: React.FC = () => {
-
-  const handleSubmit = (values: NewsletterValues, { setSubmitting }: FormikHelpers<NewsletterValues>) => {
-
-  }
+  const [newsletterRecipient, setNewsletterRecipient] = useState('')
 
   return (
     <Container>
@@ -36,54 +35,62 @@ const Newsletter: React.FC = () => {
         <h4>Receba nossas novidades, descontos e muito mais</h4>
       </NewsletterInfo>
 
-      <Formik
-        validationSchema={validationSchema}
-        initialValues={{
-          name: '',
-          email: ''
-        }}
-        onSubmit={handleSubmit}
-      >
-        {({ handleSubmit, handleChange, handleBlur, values, touched, isSubmitting, errors }) => (
-          <Form onSubmit={handleSubmit}>
-            <InputsContainer>
-              <div className='input-container'>
-                {errors.name && touched.name && <ErrorText>{errors.name}</ErrorText>}
-                <NewsletterInputWrapper
-                  className={cn({ 'error': !!errors.name && touched.name })}
-                >
-                  <Input
-                    placeholder='Digite seu nome'
-                    name="name"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.name}
-                  />
-                </NewsletterInputWrapper>
-              </div>
+      {newsletterRecipient ? (
+        <NewsletterSuccess>
+          <p>Você receberá atualizações nos seu email <strong>{newsletterRecipient}</strong></p>
+        </NewsletterSuccess>
+      ) : (
+        <Formik
+          validationSchema={validationSchema}
+          initialValues={{
+            name: '',
+            email: ''
+          }}
+          onSubmit={(values: INewsletterValues) => {
+            setNewsletterRecipient(values.email)
+          }}
+        >
+          {({ handleSubmit, handleChange, handleBlur, values, touched, isSubmitting, errors }) => (
+            <Form onSubmit={handleSubmit}>
+              <InputsContainer>
+                <div className='input-container'>
+                  {errors.name && touched.name && <ErrorText>{errors.name}</ErrorText>}
+                  <NewsletterInputWrapper
+                    className={cn({ 'error': !!errors.name && touched.name })}
+                  >
+                    <Input
+                      placeholder='Digite seu nome'
+                      name="name"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.name}
+                    />
+                  </NewsletterInputWrapper>
+                </div>
 
-              <div className='input-container'>
-                {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
-                <NewsletterInputWrapper
-                  className={cn({ 'error': !!errors.email && touched.email })}
-                >
-                  <Input
-                    placeholder='Digite seu email'
-                    name="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                  />
-                </NewsletterInputWrapper>
-              </div>
-            </InputsContainer>
+                <div className='input-container'>
+                  {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
+                  <NewsletterInputWrapper
+                    className={cn({ 'error': !!errors.email && touched.email })}
+                  >
+                    <Input
+                      placeholder='Digite seu email'
+                      name="email"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.email}
+                    />
+                  </NewsletterInputWrapper>
+                </div>
+              </InputsContainer>
 
-            <PrimaryButton type='submit'>
-              Eu quero receber novidades!
+              <PrimaryButton type='submit'>
+                Eu quero receber novidades!
           </PrimaryButton>
-          </Form>
-        )}
-      </Formik>
+            </Form>
+          )}
+        </Formik>
+      )}
     </Container>
   );
 }

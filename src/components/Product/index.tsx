@@ -1,4 +1,3 @@
-
 import {
   Container,
   Preview,
@@ -11,7 +10,9 @@ import {
 } from './styles';
 
 import { ReactComponent as StarIcon } from '../../assets/svg/estrela.svg';
-import BooksBackground from '../../assets/images/category-1.jpeg'
+import { ReactComponent as FilledStarIcon } from '../../assets/svg/filled-star.svg';
+
+import { ToLocaleString, ToLocaleStringPercentDiscount } from '../../utils'
 
 export interface IProduct {
   id: string;
@@ -20,31 +21,58 @@ export interface IProduct {
   price: string;
   promotional_price: string;
   category_id: string;
+  category: {
+    id: string,
+    bankslip_discount: number
+  }
+  images: [
+    { path: string }
+  ]
 }
 
-const Product: React.FC = () => {
+export interface Props {
+  productData: IProduct;
+}
+
+const Product: React.FC<Props> = ({ productData }) => {
+  var stars = [];
+
+  var x = 0;
+  while (x < 5) {
+    if (x < productData.stars) {
+      stars.push(<FilledStarIcon key={x} />)
+    } else {
+      stars.push(<StarIcon key={x} />)
+    }
+    x++
+  }
+
   return (
     <Container>
       <Preview>
-        <ProductPicture productPicture={BooksBackground} />
+        {productData.images[0]?.path ? (
+          <ProductPicture productPicture={productData.images[0].path} />
+        ) : (
+          <p>Foto indisponível</p>
+        )}
       </Preview>
       <ProductInfo>
         <Identification>
-          <h4>Box de Livros - Senhor Dos Anéis (3 Volumes) + Pôster</h4>
+          <h4>{productData.name}</h4>
           <Rating>
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
-            <StarIcon />
+            {stars}
           </Rating>
         </Identification>
         <PriceContainer>
           <div className='price'>
-            <h4 className='olderPrice'>R$ 114,50</h4>
-            <h3>R$ 9458,99</h3>
+            <h4 className='olderPrice'>{ToLocaleString(productData.price)}</h4>
+            <h3>{ToLocaleString(productData.promotional_price)}</h3>
           </div>
-          <h4>Ou R$ 88,20 com 10% off no boleto</h4>
+          {productData.category.bankslip_discount && (
+            <h4>
+              Ou {ToLocaleStringPercentDiscount(productData.promotional_price, productData.category.bankslip_discount)} com {productData.category.bankslip_discount}% off no boleto
+            </h4>
+          )}
         </PriceContainer>
 
         <BuyButton className='buyBtn'>Comprar</BuyButton>

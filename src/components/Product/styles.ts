@@ -13,7 +13,6 @@ export const Container = styled.div`
   border: 1px solid transparent;
 
   &:hover {
-    transition-duration: .5s;
     border: 1px solid var(--primary-dark);
 
     .buyBtn {
@@ -25,6 +24,10 @@ export const Container = styled.div`
 export const Preview = styled.figure`
   padding: 18px;
   cursor: pointer;
+
+  p {
+    color: var(--black);
+  }
 `;
 
 
@@ -32,7 +35,7 @@ export const ProductPicture = styled.div`
   height: 200px;
   width: 200px;
 
-  background: url(${(props: Props) => props.productPicture}) center center;
+  background: url(${(props: Props) => props.productPicture}) center center, var(--white);
   background-size: cover;
 `;
 
@@ -45,6 +48,13 @@ export const ProductInfo = styled.div`
 `;
 
 export const Identification = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  height: 67px;
+  
   text-align: center;
   cursor: pointer;
 
@@ -64,7 +74,6 @@ export const Rating = styled.div`
   justify-content: center;
 
   margin: 8px 0;
-
   svg {
     height: 14px;
     color: var(--warning);

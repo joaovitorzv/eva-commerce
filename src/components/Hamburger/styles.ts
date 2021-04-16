@@ -60,10 +60,6 @@ export const MenuInputWrapper = styled(InputWrapper)`
     width: 50px;
     padding: 0 .5rem;
   }
-  svg {
-    height: 100%;
-    width: 100%;
-  }
 
   @media (max-width: 820px) {
     display: flex;
