@@ -12,8 +12,8 @@ import ClothesBackground from '../../assets/images/category-3.jpeg'
 import Spinner from '../Spinner';
 
 const Categories: React.FC = () => {
-  const [categoriesData, setCategoriesData] = useState<string[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  // const [categoriesData, setCategoriesData] = useState<string[]>([])
+  // const [isLoading, setIsLoading] = useState(true)
   const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
