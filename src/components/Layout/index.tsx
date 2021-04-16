@@ -11,6 +11,8 @@ import Highlights from '../Highlights'
 
 import { Container, Main } from './styles'
 
+import api from '../../api'
+
 function Layout() {
   const [categories, setCategories] = useState<ICategory[]>([])
   const [products, setProducts] = useState<IProduct[]>([])
@@ -20,8 +22,8 @@ function Layout() {
 
   useEffect(() => {
     async function fetchData() {
-      const categoriesReponse = await fetch('https:eva-test.herokuapp.com/categories')
-      const categoriesData: ICategory[] = await categoriesReponse.json();
+      const categoriesReponse = await api.get('/categories')
+      const categoriesData: ICategory[] = categoriesReponse.data
 
       const filteredCategories = categoriesData.filter(category => {
         return category.product.length >= 4
@@ -30,8 +32,8 @@ function Layout() {
       setCategoriesFetched(false)
 
 
-      const productsResponse = await fetch('https://eva-test.herokuapp.com/products')
-      const productsData: IProduct[] = await productsResponse.json()
+      const productsResponse = await api.get('/products')
+      const productsData: IProduct[] = productsResponse.data
 
       setProducts(productsData.filter((product: IProduct) => {
         return filteredCategories.map(category => category.id).includes(product.category_id)
