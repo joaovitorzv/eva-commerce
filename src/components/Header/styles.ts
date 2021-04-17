@@ -64,6 +64,7 @@ export const InputSearchWrapper = styled(InputWrapper)`
   svg {
     height: 100%;
     width: 18px;
+    color: var(--black)
   }
 
   @media (max-width: 820px) {

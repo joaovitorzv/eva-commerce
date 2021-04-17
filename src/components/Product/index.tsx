@@ -6,6 +6,7 @@ import {
   Identification,
   Rating,
   PriceContainer,
+  Price,
   BuyButton
 } from './styles';
 
@@ -64,10 +65,10 @@ const Product: React.FC<Props> = ({ productData }) => {
           </Rating>
         </Identification>
         <PriceContainer>
-          <div className='price'>
+          <Price productOlderPrice={productData.price !== productData.promotional_price}>
             <h4 className='olderPrice'>{ToLocaleString(productData.price)}</h4>
             <h3>{ToLocaleString(productData.promotional_price)}</h3>
-          </div>
+          </Price>
           {productData.category.bankslip_discount && (
             <h4>
               Ou {ToLocaleStringPercentDiscount(productData.promotional_price, productData.category.bankslip_discount)} com {productData.category.bankslip_discount}% off no boleto

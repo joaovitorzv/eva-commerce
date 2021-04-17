@@ -14,7 +14,7 @@ export const Container = styled.div`
     height: 40px;
     color: var(--white);
   }
-  
+
   @media (max-width: 1250px) {
     display: block;
   }
@@ -31,6 +31,10 @@ export const MenuWrapper = styled.div`
   width: 100%;
   
   background-color: var(--black);
+
+  .search {
+      color: var(--black);
+  }
 `;
 
 export const HamburgerMenu = styled.button`

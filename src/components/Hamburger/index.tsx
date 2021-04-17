@@ -29,7 +29,7 @@ const Hamburger: React.FC = () => {
       <MenuWrapper openHamburger={openHamburger}>
         <MenuInputWrapper>
           <MenuInput />
-          <SearchIcon />
+          <SearchIcon className='search' />
         </MenuInputWrapper>
 
         <MenuOption>

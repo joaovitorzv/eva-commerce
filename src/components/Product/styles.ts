@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { PrimaryButton } from '../../styles'
 
 type Props = {
-  productPicture: string;
+  productPicture?: string;
+  productOlderPrice?: boolean;
 }
 
 export const Container = styled.div`
@@ -29,7 +30,6 @@ export const Preview = styled.figure`
     color: var(--black);
   }
 `;
-
 
 export const ProductPicture = styled.div`
   height: 200px;
@@ -95,22 +95,27 @@ export const PriceContainer = styled.div`
   h4 {
     font-size: 10px;
   }
+`;
 
-  .price {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 2px 0;
-  }
+export const Price = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2px 0;
 
   .olderPrice {
     font-size: 12px;
     text-decoration: line-through;
     color: var(--black-2);
+    opacity: ${(props: Props) => props.productOlderPrice ? '1' : '0'};
   }
-`;
+`
 
 export const BuyButton = styled(PrimaryButton)`
   width: 100%;
   display: none;
+
+  @media (max-width: 530px) {
+    display: block;
+  }
 `;

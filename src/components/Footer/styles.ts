@@ -68,7 +68,6 @@ export const AboutList = styled.div`
   @media (max-width: 530px) {
     ul {
       padding-right: 0;
-      border: 1px solid red;
     }
   }
 `;

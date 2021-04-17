@@ -31,7 +31,6 @@ function Layout() {
       setCategories(filteredCategories)
       setCategoriesFetched(false)
 
-
       const productsResponse = await api.get('/products')
       const productsData: IProduct[] = productsResponse.data
 
@@ -52,7 +51,7 @@ function Layout() {
         <Categories categories={categories} isLoading={categoriesFetched} />
         <Highlights products={products} isLoading={productsFetched} />
         {categories.map(category => (
-          <Highlights title={category.name} products={products.filter(product => product.category_id === category.id)} isLoading={productsFetched} />
+          <Highlights key={category.id} title={category.name} products={products.filter(product => product.category_id === category.id)} isLoading={productsFetched} />
         ))}
       </Main>
       <Newsletter />

@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin-top: 1.5rem;
+  margin-top: 1.5rem; 
+
+  @media (max-width: 820px) {
+    margin: 1.5rem auto;
+    width: 95%;
+  }
 `;
 
 export const HighlightTitle = styled.div`
@@ -17,7 +22,7 @@ export const HighlightTitle = styled.div`
 
 export const Products = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 460px;
 
@@ -36,7 +41,6 @@ export const Products = styled.div`
     border: none;
     cursor: pointer;
     position: absolute;
-    padding: 20px 10px 20px 0;
     
     svg {
       color: var(--primary);

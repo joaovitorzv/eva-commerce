@@ -37,7 +37,7 @@ const Newsletter: React.FC = () => {
 
       {newsletterRecipient ? (
         <NewsletterSuccess>
-          <p>Você receberá atualizações nos seu email <strong>{newsletterRecipient}</strong></p>
+          <p>Você receberá atualizações no seu email <strong>{newsletterRecipient}</strong></p>
         </NewsletterSuccess>
       ) : (
         <Formik
@@ -60,7 +60,7 @@ const Newsletter: React.FC = () => {
                   >
                     <Input
                       placeholder='Digite seu nome'
-                      name="name"
+                      name='name'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.name}
@@ -75,7 +75,8 @@ const Newsletter: React.FC = () => {
                   >
                     <Input
                       placeholder='Digite seu email'
-                      name="email"
+                      name='email'
+                      type='email'
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
