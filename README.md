@@ -30,6 +30,10 @@ To get a local copy up and running follow these simple steps below.
    ```sh
    git clone https://github.com/joaovitorzv/eva-commerce.git
    ```
+2. Change to cloned directory
+   ```sh
+   cd eva-commerce
+   ```
 3. Install YARN or NPM packages
    ```sh
    yarn install
